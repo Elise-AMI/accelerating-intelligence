@@ -266,7 +266,7 @@ function render() {
   content.className = 'wrap fade';
   if (state.screen === 'intro') renderIntro(content);
   else if (state.screen === 'questions') renderQuestions(content);
-  else if (state.screen === 'loading') renderLoading(content);
+  
   else if (state.screen === 'result') renderResult(content);
 }
 
@@ -414,23 +414,7 @@ function nextBlock() {
   }
 }
 
-function renderLoading(el) {
-  const steps = ["Groeifase wordt geanalyseerd...", "Marketing ecosysteem in kaart gebracht...", "80/20 focus wordt bepaald...", "Executiegaten worden geïdentificeerd...", "AI kansen worden gevonden...", "Aanbevelingen worden opgesteld..."];
-  el.innerHTML = `
-    ${logo()}
-    <div class="loading">
-      <div class="spinner"></div>
-      <p class="loading-text" id="loading-text">${steps[0]}</p>
-    </div>
-  `;
-  let i = 0;
-  const interval = setInterval(() => {
-    i = (i + 1) % steps.length;
-    const el = document.getElementById('loading-text');
-    if (el) el.textContent = steps[i];
-  }, 1200);
-  window._loadingInterval = interval;
-}
+
 
 async function generateAnalysis() {
   state.screen = 'loading';
