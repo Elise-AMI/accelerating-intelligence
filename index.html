@@ -150,7 +150,7 @@ const BLOCKS = [
     ]
   },
   {
-    id: "existing", title: "Bestaande Plannen", subtitle: "WAT ER AL LIGT VOORDAT WE BEGINNEN", accent: "pink",
+    id: "existing", title: "Bestaande Plannen", subtitle: "WAT ER AL LIGT VOORDAT WE BEGINNEN", accent: "teal",
     questions: [
       { id: "existing_plans", label: "Zijn er strategische plannen of roadmaps die de marketingrichting bepalen? Zo ja, wat staat daarin als prioriteit?", type: "textarea" },
       { id: "existing_tried", label: "Welke initiatieven zijn de afgelopen zes maanden geprobeerd maar niet van de grond gekomen — en waarom niet?", type: "textarea" },
@@ -182,7 +182,7 @@ const BLOCKS = [
     ]
   },
   {
-    id: "content", title: "Content & Website", subtitle: "JULLIE GROOTSTE TIJDSINVESTERING", accent: "pink",
+    id: "content", title: "Content & Website", subtitle: "JULLIE GROOTSTE TIJDSINVESTERING", accent: "teal",
     questions: [
       { id: "content_how", label: "Hoe wordt content nu gemaakt — door wie, hoe vaak, op basis waarvan?", type: "textarea" },
       { id: "content_strategy", label: "Is er een contentstrategie of wordt er ad hoc geproduceerd?", type: "select", options: ["Ja, een duidelijke contentstrategie", "Een contentkalender maar geen strategie erachter", "Voornamelijk ad hoc", "Geen van beide"] },
@@ -336,11 +336,31 @@ function renderQuestions(el) {
   el.querySelectorAll('textarea').forEach(ta => {
     ta.addEventListener('input', () => {
       state.answers[ta.dataset.qid] = ta.value;
+      const block = BLOCKS[state.blockIdx];
+      const complete = blockComplete(block, state.answers);
+      const btn = document.querySelector('.btn-row .btn-primary');
+      if (btn) {
+        btn.disabled = !complete;
+        const accentColor = block.accent === 'pink' ? 'var(--pink)' : 'var(--teal)';
+        btn.style.background = complete ? accentColor : 'var(--bg3)';
+        btn.style.color = complete ? 'var(--bg)' : 'var(--text3)';
+        btn.style.cursor = complete ? 'pointer' : 'not-allowed';
+      }
     });
   });
   el.querySelectorAll('input[type=text]').forEach(inp => {
     inp.addEventListener('input', () => {
       state.answers[inp.dataset.qid] = inp.value;
+      const block = BLOCKS[state.blockIdx];
+      const complete = blockComplete(block, state.answers);
+      const btn = document.querySelector('.btn-row .btn-primary');
+      if (btn) {
+        btn.disabled = !complete;
+        const accentColor = block.accent === 'pink' ? 'var(--pink)' : 'var(--teal)';
+        btn.style.background = complete ? accentColor : 'var(--bg3)';
+        btn.style.color = complete ? 'var(--bg)' : 'var(--text3)';
+        btn.style.cursor = complete ? 'pointer' : 'not-allowed';
+      }
     });
   });
 }
