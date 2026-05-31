@@ -10,13 +10,13 @@
     --bg: #2A2623;
     --bg2: #1e1b19;
     --bg3: #332e2b;
-    --text: #CFC6BC;
-    --text2: #8a7f76;
-    --text3: #5a524c;
+    --text: #E8E0D8;
+    --text2: #B8AFA6;
+    --text3: #7a7068;
     --teal: #03bba5;
     --pink: #cd017f;
     --dark-pink: #3A1F2B;
-    --border: #3d3632;
+    --border: #4a4440;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Raleway', sans-serif; min-height: 100vh; }
@@ -113,6 +113,10 @@
   .followup-box { background: var(--bg2); border-left: 2px solid var(--teal); border-radius: 2px; padding: 16px 20px; margin-bottom: 16px; }
   .followup-label { font-size: 9px; letter-spacing: 3px; color: var(--teal); text-transform: uppercase; margin-bottom: 10px; }
   .followup-text { color: var(--text2); font-size: 13px; line-height: 1.7; font-weight: 300; }
+
+  .email-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 24px; margin-top: 20px; }
+  .email-label { font-size: 9px; letter-spacing: 3px; color: var(--teal); text-transform: uppercase; margin-bottom: 10px; }
+  .email-desc { color: var(--text2); font-size: 12px; line-height: 1.7; font-weight: 300; }
 </style>
 </head>
 <body>
@@ -524,8 +528,18 @@ function renderResult(el) {
       <div class="followup-text">${r.followup_potential}</div>
     </div>
 
-    <button class="btn-reset" onclick="resetScan()">NIEUWE SCAN STARTEN</button>
+    <div style="display:flex;gap:10px;margin-top:8px;">
+      <button class="btn-primary" onclick="downloadPDF()" style="flex:1;padding:13px;font-size:10px;letter-spacing:2px;">
+        DOWNLOAD ANALYSE ALS PDF
+      </button>
+    </div>
+    <button class="btn-reset" onclick="resetScan()" style="margin-top:8px;">NIEUWE SCAN STARTEN</button>
   `;
+}
+
+function downloadPDF() {
+  document.title = "Accelerating Intelligence — Analyse";
+  setTimeout(() => { window.print(); }, 100);
 }
 
 function resetScan() {
@@ -535,5 +549,51 @@ function resetScan() {
 
 render();
 </script>
+
+<style>
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    font-family: 'Raleway', sans-serif;
+  }
+  .page { padding: 20px !important; }
+  .logo { color: #999 !important; }
+  h1, h2 { color: #1a1a1a !important; }
+
+  .result-headline { color: #03bba5 !important; }
+  .result-label, .block-label { color: #999 !important; }
+  .result-company { color: #666 !important; }
+  .result-summary { color: #444 !important; }
+
+  .score-grid { display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 4px !important; }
+  .score-card { background: #f5f5f5 !important; border: 1px solid #e0e0e0 !important; padding: 12px !important; }
+  .score-card-label { color: #999 !important; font-size: 9px !important; letter-spacing: 2px !important; }
+  .score-card-value { font-size: 14px !important; }
+
+  .truth-box { background: #fff0f7 !important; border-left: 3px solid #cd017f !important; padding: 14px 18px !important; margin-bottom: 14px !important; }
+  .truth-label { color: #cd017f !important; }
+  .truth-text { color: #333 !important; }
+
+  .result-section { background: #f9f9f9 !important; border-left: 3px solid #03bba5 !important; padding: 16px 18px !important; margin-bottom: 10px !important; page-break-inside: avoid; }
+  .result-section.pink { border-left-color: #cd017f !important; }
+  .result-section-label { color: #03bba5 !important; }
+  .result-section.pink .result-section-label { color: #cd017f !important; }
+  .result-dot { color: #03bba5 !important; }
+  .result-section.pink .result-dot { color: #cd017f !important; }
+  .result-item-text { color: #444 !important; }
+
+  .followup-box { background: #f9f9f9 !important; border-left: 3px solid #03bba5 !important; padding: 14px 18px !important; }
+  .followup-label { color: #03bba5 !important; }
+  .followup-text { color: #444 !important; }
+
+  .btn-primary, .btn-reset, .btn-back, .notice { display: none !important; }
+
+  @page {
+    margin: 20mm;
+    size: A4;
+  }
+}
+</style>
 </body>
 </html>
