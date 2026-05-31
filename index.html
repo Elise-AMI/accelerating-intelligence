@@ -140,6 +140,20 @@ const BLOCKS = [
     ]
   },
   {
+    id: "presence", title: "Online Aanwezigheid", subtitle: "WAAR JULLIE NU ZICHTBAAR ZIJN", accent: "teal",
+    questions: [
+      { id: "presence_website", label: "Wat is jullie website URL?", type: "text" },
+      { id: "presence_website_feel", label: "Hoe zou jij jullie website omschrijven?", type: "select", options: ["Sterk — duidelijk, up to date en converterend", "Redelijk — maar toe aan een update", "Verouderd — we weten het maar het komt er niet van", "Nauwelijks aanwezig — minimale website"] },
+      { id: "presence_channels", label: "Op welke sociale kanalen zijn jullie actief?", type: "multicheck", options: ["LinkedIn", "Instagram", "TikTok", "Facebook", "YouTube", "X / Twitter", "Pinterest", "Geen"] },
+      { id: "presence_linkedin", label: "Wat is jullie LinkedIn URL? (bedrijfspagina)", type: "text" },
+      { id: "presence_instagram", label: "Wat is jullie Instagram handle?", type: "text" },
+      { id: "presence_tiktok", label: "Wat is jullie TikTok handle?", type: "text" },
+      { id: "presence_frequency", label: "Hoe vaak posten jullie gemiddeld per week across alle kanalen?", type: "select", options: ["Minder dan 1 keer per week", "1 tot 3 keer per week", "3 tot 7 keer per week", "Meer dan 7 keer per week"] },
+      { id: "presence_best", label: "Op welk kanaal krijgen jullie de meeste interactie of resultaat?", type: "text" },
+      { id: "presence_gap", label: "Wat is het grootste gat tussen jullie online aanwezigheid en waar jullie klanten zich bevinden?", type: "textarea" }
+    ]
+  },
+  {
     id: "goals", title: "Bedrijfsdoelstellingen", subtitle: "MARKETING BEGINT HIER — NIET BIJ DE TOOLS", accent: "teal",
     questions: [
       { id: "goals_three", label: "Wat zijn de drie belangrijkste bedrijfsdoelstellingen voor dit jaar? Wees zo concreet mogelijk.", type: "textarea" },
@@ -434,6 +448,8 @@ async function generateAnalysis() {
   const prompt = `Je bent een senior marketing strateeg. Analyseer deze ingevulde marketing scan en maak een voorbereidingsrapport voor de adviseur die de sessie leidt. Respond ONLY with valid JSON, no markdown, no backticks, no explanation.
 
 ${lines.join('\n')}
+
+Let op: de scan bevat ook URLs en social handles. Benoem in je analyse specifiek wat je verwacht te zien op basis van de beschrijving van hun online aanwezigheid versus wat ze zeggen te doen. Noteer de URLs zodat de adviseur ze handmatig kan bekijken voor de sessie.
 
 Return this exact JSON:
 {
