@@ -6,478 +6,404 @@
 <title>Accelerating Intelligence — Marketing Scan</title>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #2A2623;
-    --bg2: #1e1b19;
-    --bg3: #332e2b;
-    --text: #E8E0D8;
-    --text2: #B8AFA6;
-    --text3: #7a7068;
-    --teal: #03bba5;
-    --pink: #cd017f;
-    --dark-pink: #3A1F2B;
-    --border: #4a4440;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Raleway', sans-serif; min-height: 100vh; }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-  @keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
-  .fade { animation: fadeUp 0.35s ease both; }
+:root {
+  --bg: #2A2623;
+  --bg2: #1e1b19;
+  --bg3: #332e2b;
+  --text: #E8E0D8;
+  --text2: #B8AFA6;
+  --text3: #7a7068;
+  --teal: #03bba5;
+  --pink: #cd017f;
+  --dark-pink: #3A1F2B;
+  --border: #4a4440;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Raleway', sans-serif; min-height: 100vh; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+.fade { animation: fadeUp 0.3s ease both; }
 
-  .page { display: flex; justify-content: center; padding: 48px 20px 80px; min-height: 100vh; }
-  .wrap { width: 100%; max-width: 600px; }
+.page { display: flex; justify-content: center; padding: 48px 20px 80px; min-height: 100vh; }
+.wrap { width: 100%; max-width: 600px; }
+.logo { font-size: 10px; letter-spacing: 4px; color: var(--text3); text-transform: uppercase; margin-bottom: 52px; }
 
-  .logo { font-size: 10px; letter-spacing: 4px; color: var(--text3); text-transform: uppercase; margin-bottom: 52px; }
+h1 { font-size: 44px; font-weight: 300; line-height: 1.1; margin-bottom: 24px; }
+h1 em { font-style: italic; color: var(--teal); }
+h2 { font-size: 28px; font-weight: 300; color: var(--text); margin-bottom: 6px; }
 
-  h1 { font-size: 46px; font-weight: 300; line-height: 1.1; margin-bottom: 24px; color: var(--text); }
-  h1 em { font-style: italic; color: var(--teal); }
-  h2 { font-size: 28px; font-weight: 300; color: var(--text); margin-bottom: 6px; }
+.intro-text { color: var(--text2); font-size: 14px; line-height: 1.8; margin-bottom: 16px; max-width: 460px; font-weight: 300; }
+.notice { background: var(--dark-pink); border-left: 2px solid var(--pink); padding: 16px 20px; margin-bottom: 48px; border-radius: 2px; }
+.notice-label { font-size: 9px; letter-spacing: 3px; color: var(--pink); text-transform: uppercase; margin-bottom: 8px; }
+.notice p { color: var(--text2); font-size: 12px; line-height: 1.7; font-weight: 300; }
 
-  .intro-text { color: var(--text2); font-size: 14px; line-height: 1.8; margin-bottom: 16px; max-width: 460px; font-weight: 300; }
-  .notice { background: var(--dark-pink); border-left: 2px solid var(--pink); padding: 16px 20px; margin-bottom: 48px; border-radius: 2px; }
-  .notice-label { font-size: 9px; letter-spacing: 3px; color: var(--pink); text-transform: uppercase; margin-bottom: 8px; }
-  .notice p { color: var(--text2); font-size: 12px; line-height: 1.7; font-weight: 300; }
+.meta { display: flex; gap: 32px; margin-bottom: 52px; }
+.meta span { font-size: 10px; color: var(--text3); letter-spacing: 1.5px; }
 
-  .meta { display: flex; gap: 32px; margin-bottom: 52px; }
-  .meta span { font-size: 10px; color: var(--text3); letter-spacing: 1.5px; }
+.btn-primary { padding: 15px 36px; background: var(--teal); color: var(--bg); border: none; border-radius: 2px; cursor: pointer; font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; letter-spacing: 2px; transition: opacity 0.2s; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:disabled { background: var(--bg3); color: var(--text3); cursor: not-allowed; opacity: 1; }
+.btn-back { padding: 12px 18px; background: transparent; color: var(--text3); border: 1px solid var(--border); border-radius: 2px; cursor: pointer; font-size: 10px; font-family: 'Raleway', sans-serif; letter-spacing: 1.5px; }
+.btn-reset { width: 100%; margin-top: 8px; padding: 12px; background: transparent; color: var(--text3); border: 1px solid var(--border); border-radius: 2px; cursor: pointer; font-size: 9px; font-family: 'Raleway', sans-serif; letter-spacing: 3px; }
 
-  .btn-primary { padding: 15px 36px; background: var(--teal); color: var(--bg); border: none; border-radius: 2px; cursor: pointer; font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; letter-spacing: 2px; transition: opacity 0.2s; }
-  .btn-primary:hover { opacity: 0.85; }
-  .btn-primary:disabled { background: var(--bg3); color: var(--text3); cursor: not-allowed; opacity: 1; }
-  .btn-back { padding: 12px 18px; background: transparent; color: var(--text3); border: 1px solid var(--border); border-radius: 2px; cursor: pointer; font-size: 10px; font-family: 'Raleway', sans-serif; letter-spacing: 1.5px; transition: opacity 0.2s; }
-  .btn-back:hover { opacity: 0.7; }
-  .btn-reset { width: 100%; margin-top: 8px; padding: 12px; background: transparent; color: var(--text3); border: 1px solid var(--border); border-radius: 2px; cursor: pointer; font-size: 9px; font-family: 'Raleway', sans-serif; letter-spacing: 3px; }
+.progress-wrap { margin-bottom: 40px; }
+.progress-labels { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.progress-labels span { font-size: 10px; letter-spacing: 2px; color: var(--text3); }
+.progress-track { height: 1px; background: var(--border); }
+.progress-fill { height: 1px; background: var(--teal); transition: width 0.4s ease; }
 
-  .progress-wrap { margin-bottom: 40px; }
-  .progress-labels { display: flex; justify-content: space-between; margin-bottom: 10px; }
-  .progress-labels span { font-size: 10px; letter-spacing: 2px; color: var(--text3); }
-  .progress-track { height: 1px; background: var(--border); }
-  .progress-fill { height: 1px; transition: width 0.4s ease; }
+.block-label { font-size: 10px; letter-spacing: 3px; color: var(--text3); margin-bottom: 10px; }
+.block-subtitle { font-size: 10px; letter-spacing: 2px; color: var(--text3); margin-bottom: 36px; }
 
-  .block-label { font-size: 10px; letter-spacing: 3px; color: var(--text3); margin-bottom: 10px; }
-  .block-subtitle { font-size: 10px; letter-spacing: 2px; color: var(--text3); margin-bottom: 36px; }
+.question { margin-bottom: 28px; }
+.question-label { color: var(--text); font-size: 13px; margin-bottom: 12px; line-height: 1.6; font-weight: 400; }
+.question-num { color: var(--teal); margin-right: 10px; font-size: 10px; }
 
-  .question { margin-bottom: 28px; }
-  .question-label { color: var(--text); font-size: 13px; margin-bottom: 12px; line-height: 1.6; font-weight: 400; }
-  .question-num { color: var(--teal); margin-right: 10px; font-size: 10px; }
+.options { display: flex; flex-direction: column; gap: 6px; }
+.opt-btn { padding: 12px 16px; text-align: left; background: var(--bg2); color: var(--text2); border: 1px solid var(--border); border-radius: 2px; cursor: pointer; font-size: 12px; font-family: 'Raleway', sans-serif; transition: all 0.15s; font-weight: 300; }
+.opt-btn:hover { border-color: var(--teal); color: var(--text); }
+.opt-btn.sel { background: var(--teal); color: var(--bg); border-color: var(--teal); font-weight: 500; }
 
-  .options { display: flex; flex-direction: column; gap: 6px; }
-  .opt-btn { padding: 12px 16px; text-align: left; background: var(--bg2); color: var(--text2); border: 1px solid var(--border); border-radius: 2px; cursor: pointer; font-size: 12px; font-family: 'Raleway', sans-serif; transition: all 0.15s; font-weight: 300; }
-  .opt-btn:hover { border-color: var(--teal); color: var(--text); }
-  .opt-btn.active { background: var(--teal); color: var(--bg); border-color: var(--teal); font-weight: 500; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-btn { padding: 8px 14px; background: var(--bg2); color: var(--text2); border: 1px solid var(--border); border-radius: 20px; cursor: pointer; font-size: 11px; font-family: 'Raleway', sans-serif; transition: all 0.15s; font-weight: 300; }
+.tag-btn.sel { background: var(--teal); color: var(--bg); border-color: var(--teal); }
 
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag-btn { padding: 8px 14px; background: var(--bg2); color: var(--text2); border: 1px solid var(--border); border-radius: 20px; cursor: pointer; font-size: 11px; font-family: 'Raleway', sans-serif; transition: all 0.15s; font-weight: 300; }
-  .tag-btn:hover { border-color: var(--teal); }
-  .tag-btn.active { background: var(--teal); color: var(--bg); border-color: var(--teal); }
+textarea, input[type=text], input[type=email] {
+  width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 2px;
+  color: var(--text); font-size: 13px; font-family: 'Raleway', sans-serif;
+  padding: 12px 14px; outline: none; transition: border-color 0.2s; font-weight: 300; line-height: 1.7;
+}
+textarea { min-height: 100px; resize: vertical; }
+textarea:focus, input:focus { border-color: var(--teal); }
+::placeholder { color: var(--text3); }
 
-  textarea, input[type=text] { width: 100%; background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; color: var(--text); font-size: 13px; font-family: 'Raleway', sans-serif; padding: 12px 14px; outline: none; transition: border-color 0.2s; font-weight: 300; line-height: 1.7; }
-  textarea { min-height: 100px; resize: vertical; }
-  textarea:focus, input[type=text]:focus { border-color: var(--teal); }
-  ::placeholder { color: var(--text3); }
+.btn-row { display: flex; gap: 10px; margin-top: 44px; }
+.btn-row .btn-next { flex: 1; padding: 13px; background: var(--teal); color: var(--bg); border: none; border-radius: 2px; cursor: pointer; font-size: 10px; font-family: 'Raleway', sans-serif; font-weight: 600; letter-spacing: 2px; transition: all 0.2s; }
+.btn-row .btn-next:disabled { background: var(--bg3); color: var(--text3); cursor: not-allowed; }
 
-  .btn-row { display: flex; gap: 10px; margin-top: 44px; }
-  .btn-row .btn-primary { flex: 1; padding: 13px; }
+.done-wrap { text-align: center; padding: 40px 0; }
+.done-title { font-size: 28px; font-weight: 300; color: var(--text); margin-bottom: 16px; }
+.done-sub { color: var(--text2); font-size: 13px; line-height: 1.8; margin-bottom: 40px; max-width: 400px; margin-left: auto; margin-right: auto; }
+.done-btn { width: 100%; padding: 16px; background: var(--teal); color: var(--bg); border: none; border-radius: 2px; cursor: pointer; font-size: 11px; font-family: 'Raleway', sans-serif; font-weight: 600; letter-spacing: 2px; margin-bottom: 10px; }
 
-  /* Loading */
-  .loading { text-align: center; padding: 80px 0; }
-  .spinner { width: 40px; height: 40px; border: 1px solid var(--teal); border-top-color: transparent; border-radius: 50%; margin: 0 auto 32px; animation: spin 1.2s linear infinite; }
-  .loading-text { color: var(--teal); font-size: 11px; letter-spacing: 3px; font-weight: 300; }
-
-  /* Results */
-  .result-header { margin-bottom: 32px; }
-  .result-label { font-size: 9px; letter-spacing: 3px; color: var(--text3); text-transform: uppercase; margin-bottom: 10px; }
-  .result-company { font-size: 11px; letter-spacing: 2px; color: var(--text2); margin-bottom: 16px; }
-  .result-headline { font-size: 26px; font-weight: 300; color: var(--teal); margin-bottom: 16px; line-height: 1.2; font-style: italic; }
-  .result-summary { color: var(--text2); font-size: 13px; line-height: 1.8; font-weight: 300; }
-
-  .score-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-bottom: 20px; }
-  .score-card { background: var(--bg2); padding: 16px 14px; }
-  .score-card-label { font-size: 9px; letter-spacing: 2px; color: var(--text3); text-transform: uppercase; margin-bottom: 8px; }
-  .score-card-value { font-size: 16px; font-style: italic; font-weight: 300; }
-
-  .truth-box { background: var(--dark-pink); border-left: 2px solid var(--pink); border-radius: 2px; padding: 16px 20px; margin-bottom: 16px; }
-  .truth-label { font-size: 9px; letter-spacing: 3px; color: var(--pink); text-transform: uppercase; margin-bottom: 10px; }
-  .truth-text { color: var(--text); font-size: 13px; line-height: 1.7; font-style: italic; font-weight: 300; }
-
-  .result-section { background: var(--bg2); border-left: 2px solid var(--teal); border-radius: 2px; padding: 20px 22px; margin-bottom: 12px; }
-  .result-section.pink { border-left-color: var(--pink); }
-  .result-section-label { font-size: 9px; letter-spacing: 3px; color: var(--teal); text-transform: uppercase; margin-bottom: 14px; }
-  .result-section.pink .result-section-label { color: var(--pink); }
-  .result-item { display: flex; gap: 10px; margin-bottom: 10px; }
-  .result-item:last-child { margin-bottom: 0; }
-  .result-dot { color: var(--teal); font-size: 10px; margin-top: 3px; flex-shrink: 0; }
-  .result-section.pink .result-dot { color: var(--pink); }
-  .result-item-text { color: var(--text2); font-size: 13px; line-height: 1.7; font-weight: 300; }
-
-  .followup-box { background: var(--bg2); border-left: 2px solid var(--teal); border-radius: 2px; padding: 16px 20px; margin-bottom: 16px; }
-  .followup-label { font-size: 9px; letter-spacing: 3px; color: var(--teal); text-transform: uppercase; margin-bottom: 10px; }
-  .followup-text { color: var(--text2); font-size: 13px; line-height: 1.7; font-weight: 300; }
-
-  .email-section { background: var(--bg2); border: 1px solid var(--border); border-radius: 2px; padding: 24px; margin-top: 20px; }
-  .email-label { font-size: 9px; letter-spacing: 3px; color: var(--teal); text-transform: uppercase; margin-bottom: 10px; }
-  .email-desc { color: var(--text2); font-size: 12px; line-height: 1.7; font-weight: 300; }
+@media print {
+  body { background: #fff !important; color: #1a1a1a !important; }
+  .page { padding: 10px !important; }
+  .logo { color: #999 !important; }
+  .done-btn, .btn-reset, .notice { display: none !important; }
+  .done-wrap { text-align: left !important; padding: 0 0 20px !important; }
+  .done-title { color: #1a1a1a !important; font-size: 20px !important; }
+  .done-sub { color: #444 !important; }
+  @page { margin: 15mm; size: A4; }
+}
 </style>
 </head>
 <body>
-
-<div class="page" id="app">
-  <div class="wrap" id="content"></div>
+<div class="page">
+  <div class="wrap fade" id="app"></div>
 </div>
 
 <script>
 const BLOCKS = [
   {
-    id: "company", title: "Bedrijf & Groeifase", subtitle: "WAAR STAAT HET BEDRIJF VANDAAG", accent: "teal",
+    id: "company", title: "Bedrijf en Groeifase", subtitle: "WAAR STAAT HET BEDRIJF VANDAAG",
     questions: [
-      { id: "company_what", label: "Wat doet jullie bedrijf en voor wie?", type: "textarea" },
-      { id: "company_size", label: "Hoeveel mensen werken er in het bedrijf?", type: "select", options: ["1 tot 5", "6 tot 15", "16 tot 30", "31 tot 75", "75+"] },
-      { id: "company_age", label: "Hoe lang bestaat het bedrijf?", type: "select", options: ["Minder dan 1 jaar", "1 tot 2 jaar", "2 tot 4 jaar", "4 tot 7 jaar", "7+ jaar"] },
-      { id: "company_revenue", label: "Wat is de huidige jaaromzet — bij benadering?", type: "select", options: ["Onder €250k", "€250k tot €750k", "€750k tot €2M", "€2M tot €5M", "€5M+"] },
-      { id: "company_phase", label: "Hoe zou jij de huidige groeifase omschrijven?", type: "select", options: ["We zoeken nog naar product-market fit", "We hebben bewijs dat het werkt en schalen op", "We groeien maar de groei is onvoorspelbaar", "We groeien stabiel en willen verder professionaliseren"] },
-      { id: "company_team_growth", label: "Zijn er plannen om het team de komende zes maanden uit te breiden?", type: "select", options: ["Nee", "Ja, 1 tot 2 mensen", "Ja, 3 tot 5 mensen", "Ja, meer dan 5 mensen"] },
-      { id: "company_challenge", label: "Wat is de grootste uitdaging waar het bedrijf nu voor staat?", type: "textarea" }
+      { id: "c1", label: "Wat doet jullie bedrijf en voor wie?", type: "textarea" },
+      { id: "c2", label: "Hoeveel mensen werken er in het bedrijf?", type: "select", options: ["1 tot 5","6 tot 15","16 tot 30","31 tot 75","75+"] },
+      { id: "c3", label: "Hoe lang bestaat het bedrijf?", type: "select", options: ["Minder dan 1 jaar","1 tot 2 jaar","2 tot 4 jaar","4 tot 7 jaar","7+ jaar"] },
+      { id: "c4", label: "Wat is de huidige jaaromzet bij benadering?", type: "select", options: ["Onder 250k","250k tot 750k","750k tot 2M","2M tot 5M","5M+"] },
+      { id: "c5", label: "Hoe zou jij de huidige groeifase omschrijven?", type: "select", options: ["We zoeken nog naar product-market fit","We hebben bewijs dat het werkt en schalen op","We groeien maar de groei is onvoorspelbaar","We groeien stabiel en willen verder professionaliseren"] },
+      { id: "c6", label: "Zijn er plannen om het team de komende zes maanden uit te breiden?", type: "select", options: ["Nee","Ja, 1 tot 2 mensen","Ja, 3 tot 5 mensen","Ja, meer dan 5 mensen"] },
+      { id: "c7", label: "Wat is de grootste uitdaging waar het bedrijf nu voor staat?", type: "textarea" }
     ]
   },
   {
-    id: "presence", title: "Online Aanwezigheid", subtitle: "WAAR JULLIE NU ZICHTBAAR ZIJN", accent: "teal",
+    id: "presence", title: "Online Aanwezigheid", subtitle: "WAAR JULLIE NU ZICHTBAAR ZIJN",
     questions: [
-      { id: "presence_website", label: "Wat is jullie website URL?", type: "text" },
-      { id: "presence_website_feel", label: "Hoe zou jij jullie website omschrijven?", type: "select", options: ["Sterk — duidelijk, up to date en converterend", "Redelijk — maar toe aan een update", "Verouderd — we weten het maar het komt er niet van", "Nauwelijks aanwezig — minimale website"] },
-      { id: "presence_channels", label: "Op welke sociale kanalen zijn jullie actief?", type: "multicheck", options: ["LinkedIn", "Instagram", "TikTok", "Facebook", "YouTube", "X / Twitter", "Pinterest", "Overige", "Geen"] },
-      { id: "presence_linkedin", label: "Wat is jullie LinkedIn URL? (bedrijfspagina)", type: "text" },
-      { id: "presence_instagram", label: "Wat is jullie Instagram handle?", type: "text" },
-      { id: "presence_tiktok", label: "Wat is jullie TikTok handle?", type: "text" },
-      { id: "presence_frequency", label: "Hoe vaak posten jullie gemiddeld per week across alle kanalen?", type: "select", options: ["Minder dan 1 keer per week", "1 tot 3 keer per week", "3 tot 7 keer per week", "Meer dan 7 keer per week"] },
-      { id: "presence_best", label: "Op welk kanaal krijgen jullie de meeste interactie of resultaat?", type: "text" },
-      { id: "presence_gap", label: "Wat is het grootste gat tussen jullie online aanwezigheid en waar jullie klanten zich bevinden?", type: "textarea" }
+      { id: "p1", label: "Wat is jullie website URL?", type: "text" },
+      { id: "p2", label: "Hoe zou jij jullie website omschrijven?", type: "select", options: ["Sterk — duidelijk, up to date en converterend","Redelijk — maar toe aan een update","Verouderd — we weten het maar het komt er niet van","Nauwelijks aanwezig — minimale website"] },
+      { id: "p3", label: "Op welke sociale kanalen zijn jullie actief?", type: "multi", options: ["LinkedIn","Instagram","TikTok","Facebook","YouTube","X / Twitter","Pinterest","Overige","Geen"] },
+      { id: "p4", label: "Wat is jullie LinkedIn URL?", type: "text" },
+      { id: "p5", label: "Wat is jullie Instagram handle?", type: "text" },
+      { id: "p6", label: "Wat is jullie TikTok handle?", type: "text" },
+      { id: "p7", label: "Hoe vaak posten jullie gemiddeld per week across alle kanalen?", type: "select", options: ["Minder dan 1 keer","1 tot 3 keer","3 tot 7 keer","Meer dan 7 keer"] },
+      { id: "p8", label: "Op welk kanaal krijgen jullie de meeste interactie of resultaat?", type: "text" },
+      { id: "p9", label: "Wat is het grootste gat tussen jullie online aanwezigheid en waar jullie klanten zich bevinden?", type: "textarea" }
     ]
   },
   {
-    id: "goals", title: "Bedrijfsdoelstellingen", subtitle: "MARKETING BEGINT HIER — NIET BIJ DE TOOLS", accent: "teal",
+    id: "goals", title: "Bedrijfsdoelstellingen", subtitle: "MARKETING BEGINT HIER NIET BIJ DE TOOLS",
     questions: [
-      { id: "goals_three", label: "Wat zijn de drie belangrijkste bedrijfsdoelstellingen voor dit jaar? Wees zo concreet mogelijk.", type: "textarea" },
-      { id: "goals_endstate", label: "Wat moet er eind dit jaar aantoonbaar anders of beter zijn dan nu?", type: "textarea" },
-      { id: "goals_owner", label: "Wie is eindverantwoordelijk voor het behalen van deze doelstellingen?", type: "text" },
-      { id: "goals_marketing_own", label: "Heeft marketing eigen doelstellingen — of zijn die afgeleid van wat sales of de founder verwacht?", type: "select", options: ["Marketing heeft eigen doelstellingen", "Afgeleid van sales doelstellingen", "Afgeleid van wat de founder verwacht", "Er zijn geen formele doelstellingen"] },
-      { id: "goals_measurement", label: "Hoe wordt het succes van marketing gemeten?", type: "textarea" }
+      { id: "g1", label: "Wat zijn de drie belangrijkste bedrijfsdoelstellingen voor dit jaar? Wees zo concreet mogelijk.", type: "textarea" },
+      { id: "g2", label: "Wat moet er eind dit jaar aantoonbaar anders of beter zijn dan nu?", type: "textarea" },
+      { id: "g3", label: "Wie is eindverantwoordelijk voor het behalen van deze doelstellingen?", type: "text" },
+      { id: "g4", label: "Heeft marketing eigen doelstellingen of zijn die afgeleid van wat sales of de founder verwacht?", type: "select", options: ["Marketing heeft eigen doelstellingen","Afgeleid van sales doelstellingen","Afgeleid van wat de founder verwacht","Er zijn geen formele doelstellingen"] },
+      { id: "g5", label: "Hoe wordt het succes van marketing gemeten?", type: "textarea" }
     ]
   },
   {
-    id: "existing", title: "Bestaande Plannen", subtitle: "WAT ER AL LIGT VOORDAT WE BEGINNEN", accent: "teal",
+    id: "existing", title: "Bestaande Plannen", subtitle: "WAT ER AL LIGT VOORDAT WE BEGINNEN",
     questions: [
-      { id: "existing_plans", label: "Zijn er strategische plannen of roadmaps die de marketingrichting bepalen? Zo ja, wat staat daarin als prioriteit?", type: "textarea" },
-      { id: "existing_tried", label: "Welke initiatieven zijn de afgelopen zes maanden geprobeerd maar niet van de grond gekomen — en waarom niet?", type: "textarea" },
-      { id: "existing_decided", label: "Wat is er al besloten voor de komende drie tot zes maanden?", type: "textarea" },
-      { id: "existing_external", label: "Zijn er externe partijen die invloed hebben op de marketingkeuzes?", type: "select", options: ["Nee", "Ja, een agency", "Ja, een adviseur", "Ja, investeerders", "Meerdere van bovenstaande"] },
-      { id: "existing_advice", label: "Wat heeft iemand jou al geadviseerd wat je nog niet hebt geïmplementeerd — en waarom niet?", type: "textarea" }
+      { id: "e1", label: "Zijn er strategische plannen of roadmaps die de marketingrichting bepalen? Zo ja, wat staat daarin als prioriteit?", type: "textarea" },
+      { id: "e2", label: "Welke initiatieven zijn de afgelopen zes maanden geprobeerd maar niet van de grond gekomen en waarom niet?", type: "textarea" },
+      { id: "e3", label: "Wat is er al besloten voor de komende drie tot zes maanden?", type: "textarea" },
+      { id: "e4", label: "Zijn er externe partijen die invloed hebben op de marketingkeuzes?", type: "select", options: ["Nee","Ja, een agency","Ja, een adviseur","Ja, investeerders","Meerdere van bovenstaande"] },
+      { id: "e5", label: "Wat heeft iemand jou al geadviseerd wat je nog niet hebt geimplementeerd en waarom niet?", type: "textarea" }
     ]
   },
   {
-    id: "focus", title: "Impact & Focus", subtitle: "DE 80/20 VAN JULLIE MARKETING VANDAAG", accent: "teal",
+    id: "role", title: "De Rol van Marketing", subtitle: "PERCEPTIE BEPAALT PRIORITEIT",
     questions: [
-      { id: "focus_top", label: "Welke twee of drie activiteiten leveren aantoonbaar de meeste bijdrage aan jullie bedrijfsdoelstellingen?", type: "textarea" },
-      { id: "focus_proof", label: "Hoe weet je dat deze activiteiten impactvol zijn?", type: "select", options: ["Puur op data", "Grotendeels data, deels gevoel", "Grotendeels gevoel, deels data", "Voornamelijk gevoel en aanname"] },
-      { id: "focus_waste", label: "Welke activiteiten kosten veel tijd maar kun je niet bewijzen dat ze werken?", type: "textarea" },
-      { id: "focus_halfbudget", label: "Als je verder moet met de helft van je tijd en budget — wat houd je dan over?", type: "textarea" },
-      { id: "focus_stop", label: "Wat zou je stoppen als je de keuze had?", type: "textarea" },
-      { id: "focus_start", label: "Als niets een obstakel is — met welke marketing activiteit zou je vandaag nog starten en waarom?", type: "textarea" }
+      { id: "r1", label: "Hoe wordt marketing binnen jullie organisatie gezien?", type: "select", options: ["Als ondersteuning voor sales","Als zelfstandige afdeling met eigen doelen","Als gelijkwaardige partner aan sales","Dat is nog niet duidelijk gedefinieerd"] },
+      { id: "r2", label: "Hoe omschrijf je de relatie tussen marketing en sales?", type: "select", options: ["We werken in aparte silos — nauwelijks contact","Marketing ondersteunt sales — sales bepaalt de agenda","We werken samen maar missen een gedeeld doel","Marketing en sales zijn getrouwd — zelfde doelen, zelfde taal"] },
+      { id: "r3", label: "In hoeverre draagt marketing nu aantoonbaar bij aan de bedrijfsdoelstellingen? Hoe weet je dat?", type: "textarea" },
+      { id: "r4", label: "Hoe is de samenwerking tussen marketing en sales georganiseerd?", type: "textarea" },
+      { id: "r5", label: "Waar zit de meeste wrijving tussen marketing en de rest van de organisatie?", type: "textarea" }
     ]
   },
   {
-    id: "team", title: "Team & Tijdsbesteding", subtitle: "WIE DOET WAT EN HOEVEEL TIJD KOST HET ECHT", accent: "teal",
+    id: "focus", title: "Impact en Focus", subtitle: "DE 80/20 VAN JULLIE MARKETING VANDAAG",
     questions: [
-      { id: "team_people", label: "Hoeveel mensen werken er in marketing — fulltime, parttime, freelance?", type: "textarea" },
-      { id: "team_roles", label: "Wat zijn de rollen en verantwoordelijkheden van elk teamlid?", type: "textarea" },
-      { id: "team_opvsstrat", label: "Welk deel van het werk is operationeel versus strategisch?", type: "select", options: ["90% operationeel, 10% strategisch", "80% operationeel, 20% strategisch", "60% operationeel, 40% strategisch", "50/50", "Meer strategisch dan operationeel"] },
-      { id: "team_timewaste", label: "Waar verliest het team de meeste tijd aan taken die weinig denkkracht vereisen?", type: "textarea" },
-      { id: "team_onboarding", label: "Hoe worden nieuwe teamleden ingewerkt?", type: "select", options: ["Er is een formeel onboardingproces", "Gedeeltelijk gestructureerd", "Voornamelijk onderweg leren", "We hebben dit nog niet meegemaakt"] },
-      { id: "team_rituals", label: "Zijn er vaste rituelen in het marketing of sales team — zoals een wekelijks overleg of stand-up — en wie is hiervoor verantwoordelijk?", type: "textarea" },
-      { id: "team_honest", label: "Voelt marketing nu als een systeem dat werkt, of als iets dat draait op wilskracht?", type: "select", options: ["Sterk systeem dat zelfstandig draait", "Redelijk systeem maar afhankelijk van een paar mensen", "Grotendeels wilskracht en enthousiasme", "Het is chaos — eerlijk gezegd"] }
+      { id: "f1", label: "Welke twee of drie marketing activiteiten leveren aantoonbaar de meeste bijdrage aan jullie bedrijfsdoelstellingen?", type: "textarea" },
+      { id: "f2", label: "Hoe weet je dat deze activiteiten impactvol zijn?", type: "select", options: ["Puur op data","Grotendeels data, deels gevoel","Grotendeels gevoel, deels data","Voornamelijk gevoel en aanname"] },
+      { id: "f3", label: "Welke activiteiten kosten veel tijd maar kun je niet bewijzen dat ze werken?", type: "textarea" },
+      { id: "f4", label: "Als je verder moet met de helft van je tijd en budget — wat houd je dan over?", type: "textarea" },
+      { id: "f5", label: "Wat zou je stoppen als je de keuze had?", type: "textarea" },
+      { id: "f6", label: "Als niets een obstakel is — met welke marketing activiteit zou je vandaag nog starten en waarom?", type: "textarea" }
     ]
   },
   {
-    id: "content", title: "Content & Website", subtitle: "JULLIE GROOTSTE TIJDSINVESTERING", accent: "teal",
+    id: "team", title: "Team en Tijdsbesteding", subtitle: "WIE DOET WAT EN HOEVEEL TIJD KOST HET ECHT",
     questions: [
-      { id: "content_how", label: "Hoe wordt content nu gemaakt — door wie, hoe vaak, op basis waarvan?", type: "textarea" },
-      { id: "content_strategy", label: "Is er een contentstrategie of wordt er ad hoc geproduceerd?", type: "select", options: ["Ja, een duidelijke contentstrategie", "Een contentkalender maar geen strategie erachter", "Voornamelijk ad hoc", "Geen van beide"] },
-      { id: "content_bottleneck", label: "Wat is de grootste bottleneck in jullie contentproductie?", type: "select", options: ["Ideation en richting", "Schrijven en productie", "Design en visual", "Review en goedkeuring", "Distributie en planning", "Performance tracking"] },
-      { id: "content_website", label: "Hoe wordt de website bijgehouden en wie is daarvoor verantwoordelijk?", type: "textarea" },
-      { id: "content_frustration", label: "Wat is jullie grootste frustratie rondom content en website vandaag?", type: "textarea" }
+      { id: "t1", label: "Hoeveel mensen werken er in marketing — fulltime, parttime, freelance?", type: "textarea" },
+      { id: "t2", label: "Wat zijn de rollen en verantwoordelijkheden van elk teamlid?", type: "textarea" },
+      { id: "t3", label: "Welk deel van het werk is operationeel versus strategisch?", type: "select", options: ["90% operationeel, 10% strategisch","80% operationeel, 20% strategisch","60% operationeel, 40% strategisch","50/50","Meer strategisch dan operationeel"] },
+      { id: "t4", label: "Waar verliest het team de meeste tijd aan taken die weinig denkkracht vereisen?", type: "textarea" },
+      { id: "t5", label: "Zijn er vaste rituelen in het marketing of sales team — zoals een wekelijks overleg of stand-up — en wie is hiervoor verantwoordelijk?", type: "textarea" },
+      { id: "t6", label: "Hoe worden nieuwe teamleden ingewerkt?", type: "select", options: ["Er is een formeel onboardingproces","Gedeeltelijk gestructureerd","Voornamelijk onderweg leren","We hebben dit nog niet meegemaakt"] },
+      { id: "t7", label: "Voelt marketing nu als een systeem dat werkt, of als iets dat draait op wilskracht?", type: "select", options: ["Sterk systeem dat zelfstandig draait","Redelijk systeem maar afhankelijk van een paar mensen","Grotendeels wilskracht en enthousiasme","Het is chaos — eerlijk gezegd"] }
     ]
   },
   {
-    id: "tools", title: "Tools & Budget", subtitle: "WAT ER IN DE GEREEDSCHAPSKIST ZIT", accent: "teal",
+    id: "content", title: "Content en Website", subtitle: "JULLIE GROOTSTE TIJDSINVESTERING",
     questions: [
-      { id: "tools_list", label: "Welke tools gebruiken jullie dagelijks in marketing?", type: "textarea" },
-      { id: "tools_budget", label: "Wat is het maandelijkse budget voor tools bij benadering?", type: "select", options: ["Onder €500", "€500 tot €1.500", "€1.500 tot €3.000", "€3.000 tot €7.500", "€7.500+"] },
-      { id: "tools_manual", label: "Waar doen jullie nog handmatig werk dat eigenlijk geautomatiseerd zou kunnen zijn?", type: "textarea" }
+      { id: "cw1", label: "Hoe wordt content nu gemaakt — door wie, hoe vaak, op basis waarvan?", type: "textarea" },
+      { id: "cw2", label: "Is er een contentstrategie of wordt er ad hoc geproduceerd?", type: "select", options: ["Ja, een duidelijke contentstrategie","Een contentkalender maar geen strategie erachter","Voornamelijk ad hoc","Geen van beide"] },
+      { id: "cw3", label: "Wat is de grootste bottleneck in jullie contentproductie?", type: "select", options: ["Ideation en richting","Schrijven en productie","Design en visual","Review en goedkeuring","Distributie en planning","Performance tracking"] },
+      { id: "cw4", label: "Hoe wordt de website bijgehouden en wie is daarvoor verantwoordelijk?", type: "textarea" },
+      { id: "cw5", label: "Wat is jullie grootste frustratie rondom content en website vandaag?", type: "textarea" }
     ]
   },
   {
-    id: "execution", title: "Executie & Meting", subtitle: "STRATEGIE ZONDER EXECUTIE IS FICTIE", accent: "teal",
+    id: "tools", title: "Tools en Budget", subtitle: "WAT ER IN DE GEREEDSCHAPSKIST ZIT",
     questions: [
-      { id: "exec_plan", label: "Is er een maandelijks of wekelijks executieplan — wie doet wat en wanneer?", type: "select", options: ["Ja, volledig uitgewerkt per persoon", "Gedeeltelijk — globale planning maar geen eigenaarschap", "Nee, we werken op gevoel en prioriteit van de dag", "Nee, alles loopt via de founder"] },
-      { id: "exec_dashboard", label: "Bestaat er een KPI dashboard dat regelmatig wordt bekeken?", type: "select", options: ["Ja, dagelijks", "Ja, wekelijks", "Ja, maar maandelijks of minder", "Nee, rapportage is handmatig", "Nee, we meten nauwelijks"] },
-      { id: "exec_metrics", label: "Welke metrics bekijken jullie wekelijks — en welke zouden jullie willen bekijken maar gebeurt dat niet?", type: "textarea" },
-      { id: "exec_decisions", label: "Wie neemt welke beslissingen in marketing — en is dat voor iedereen duidelijk?", type: "select", options: ["Volledig duidelijk voor iedereen", "Grotendeels duidelijk", "Deels onduidelijk", "Niet duidelijk — alles gaat via de founder"] },
-      { id: "exec_stuck", label: "Waar loopt het team het vaakst vast?", type: "select", options: ["Te veel werk, te weinig tijd", "Te weinig richting en prioriteit", "Te weinig inzicht in wat werkt", "Onduidelijke rolverdeling", "Combinatie van bovenstaande"] }
+      { id: "to1", label: "Welke tools gebruiken jullie dagelijks in marketing?", type: "textarea" },
+      { id: "to2", label: "Wat is het maandelijkse budget voor tools bij benadering?", type: "select", options: ["Onder 500","500 tot 1500","1500 tot 3000","3000 tot 7500","7500+"] },
+      { id: "to3", label: "Waar doen jullie nog handmatig werk dat eigenlijk geautomatiseerd zou kunnen zijn?", type: "textarea" }
     ]
   },
   {
-    id: "ai", title: "AI Readiness", subtitle: "PAS HIER KOMT AI IN BEELD — BEWUST ALS LAATSTE", accent: "teal",
+    id: "execution", title: "Executie en Meting", subtitle: "STRATEGIE ZONDER EXECUTIE IS FICTIE",
     questions: [
-      { id: "ai_current", label: "Wat gebruik je al aan AI tools — ook al is het experimenteel?", type: "textarea" },
-      { id: "ai_blocker", label: "Wat is de grootste belemmering om AI in te zetten?", type: "multicheck", options: ["Weten niet waar te beginnen", "Team weerstand", "Budget", "Datakwaliteit", "Geen duidelijke ROI", "Te veel opties", "Geen belemmering"] },
-      { id: "ai_first", label: "Wat zou je als eerste willen automatiseren als het kon?", type: "textarea" },
-      { id: "ai_team", label: "Hoe staat het team tegenover AI?", type: "select", options: ["Enthousiast en klaar om te beginnen", "Nieuwsgierig maar voorzichtig", "Sceptisch", "Onzeker — we weten niet genoeg", "Verdeeld per persoon"] }
+      { id: "ex1", label: "Is er een maandelijks of wekelijks executieplan — wie doet wat en wanneer?", type: "select", options: ["Ja, volledig uitgewerkt per persoon","Gedeeltelijk — globale planning maar geen eigenaarschap","Nee, we werken op gevoel en prioriteit van de dag","Nee, alles loopt via de founder"] },
+      { id: "ex2", label: "Bestaat er een KPI dashboard dat regelmatig wordt bekeken?", type: "select", options: ["Ja, dagelijks","Ja, wekelijks","Ja, maar maandelijks of minder","Nee, rapportage is handmatig","Nee, we meten nauwelijks"] },
+      { id: "ex3", label: "Welke metrics bekijken jullie wekelijks en welke zouden jullie willen bekijken maar gebeurt dat niet?", type: "textarea" },
+      { id: "ex4", label: "Wie neemt welke beslissingen in marketing en is dat voor iedereen duidelijk?", type: "select", options: ["Volledig duidelijk voor iedereen","Grotendeels duidelijk","Deels onduidelijk","Niet duidelijk — alles gaat via de founder"] },
+      { id: "ex5", label: "Waar loopt het team het vaakst vast?", type: "select", options: ["Te veel werk, te weinig tijd","Te weinig richting en prioriteit","Te weinig inzicht in wat werkt","Onduidelijke rolverdeling","Combinatie van bovenstaande"] }
     ]
   },
   {
-    id: "closing", title: "Afsluiting", subtitle: "TWEE VRAGEN DIE DE SESSIE RICHTING GEVEN", accent: "teal",
+    id: "ai", title: "AI Readiness", subtitle: "PAS HIER KOMT AI IN BEELD",
     questions: [
-      { id: "close_one", label: "Als je na onze sessie één ding concreet anders doet — wat zou je willen dat dat is?", type: "textarea" },
-      { id: "close_extra", label: "Is er iets wat je niet kwijt kon in bovenstaande vragen maar wel relevant is?", type: "textarea" }
+      { id: "ai1", label: "Wat gebruik je al aan AI tools — ook al is het experimenteel?", type: "textarea" },
+      { id: "ai2", label: "Wat is de grootste belemmering om AI in te zetten?", type: "multi", options: ["Weten niet waar te beginnen","Team weerstand","Budget","Datakwaliteit","Geen duidelijke ROI","Te veel opties","Geen belemmering"] },
+      { id: "ai3", label: "Wat zou je als eerste willen automatiseren als het kon?", type: "textarea" },
+      { id: "ai4", label: "Hoe staat het team tegenover AI?", type: "select", options: ["Enthousiast en klaar om te beginnen","Nieuwsgierig maar voorzichtig","Sceptisch","Onzeker — we weten niet genoeg","Verdeeld per persoon"] }
+    ]
+  },
+  {
+    id: "closing", title: "Afsluiting", subtitle: "TWEE VRAGEN DIE DE SESSIE RICHTING GEVEN",
+    questions: [
+      { id: "cl1", label: "Als je na onze sessie een ding concreet anders doet — wat zou je willen dat dat is?", type: "textarea" },
+      { id: "cl2", label: "Is er iets wat je niet kwijt kon in bovenstaande vragen maar wel relevant is?", type: "textarea" }
     ]
   }
 ];
 
-let state = { screen: "intro", blockIdx: 0, answers: {}, result: null, loadingStep: 0 };
+const app = document.getElementById('app');
+let answers = {};
+let blockIdx = 0;
+let screen = 'intro';
 
-function hasValue(v) {
-  if (!v) return false;
-  if (Array.isArray(v)) return v.length > 0;
-  return v.toString().trim().length > 0;
+function totalQ() { return BLOCKS.reduce((a,b) => a + b.questions.length, 0); }
+function answeredQ() {
+  return Object.keys(answers).filter(k => {
+    const v = answers[k];
+    if (!v) return false;
+    if (Array.isArray(v)) return v.length > 0;
+    return String(v).trim().length > 0;
+  }).length;
 }
 
-function blockComplete(block, answers) {
+function isComplete(block) {
   return block.questions.every(q => {
-    const el = document.querySelector(`[data-qid="${q.id}"]`);
-    if (el && (el.tagName === 'TEXTAREA' || el.type === 'text')) {
-      if (el.value && el.value.trim()) {
-        answers[q.id] = el.value;
-      }
-    }
-    return hasValue(answers[q.id]);
+    const v = answers[q.id];
+    if (!v) return false;
+    if (Array.isArray(v)) return v.length > 0;
+    return String(v).trim().length > 0;
   });
-}
-
-function answeredCount(answers) {
-  return Object.keys(answers).filter(k => hasValue(answers[k])).length;
-}
-
-function totalQuestions() {
-  return BLOCKS.reduce((a, b) => a + b.questions.length, 0);
-}
-
-function render() {
-  const content = document.getElementById('content');
-  content.className = 'wrap fade';
-  if (state.screen === 'intro') renderIntro(content);
-  else if (state.screen === 'questions') renderQuestions(content);
-  
-  else if (state.screen === 'result') renderResult(content);
 }
 
 function logo() {
-  return `<div class="logo">+ Accelerating Intelligence</div>`;
+  return '<div class="logo">+ Accelerating Intelligence</div>';
 }
 
-function renderIntro(el) {
-  el.innerHTML = `
-    ${logo()}
-    <h1>Marketing Ecosysteem<br><em>Scan.</em></h1>
-    <p class="intro-text">Deze vragenlijst is bewust en diepgaand. Het invullen duurt 45 tot 60 minuten. De kwaliteit van de sessie staat of valt met de eerlijkheid van jouw antwoorden.</p>
-    <p class="intro-text">Er zijn geen goede of foute antwoorden.</p>
-    <div class="notice">
-      <div class="notice-label">Belangrijk</div>
-      <p>Deze vragenlijst is bedoeld voor de founder, directeur of marketing lead. Niet te delegeren. De vragen gaan over bedrijfsdoelstellingen en strategische keuzes die alleen jij kunt beantwoorden.</p>
-    </div>
-    <div class="meta">
-      <span>+ ${BLOCKS.length} blokken</span>
-      <span>+ 45-60 minuten</span>
-      
-    </div>
-    <button class="btn-primary" onclick="startScan()">START DE SCAN</button>
-  `;
+function render() {
+  if (screen === 'intro') renderIntro();
+  else if (screen === 'questions') renderQuestions();
+  else if (screen === 'done') renderDone();
 }
 
-function startScan() {
-  state.screen = 'questions';
-  state.blockIdx = 0;
-  render();
-}
-
-function renderQuestions(el) {
-  const block = BLOCKS[state.blockIdx];
-  const pct = Math.round((answeredCount(state.answers) / totalQuestions()) * 100);
-  const accentColor = block.accent === 'pink' ? 'var(--pink)' : 'var(--teal)';
-  const complete = blockComplete(block, state.answers);
-
-  let questionsHtml = block.questions.map((q, qi) => {
-    return `<div class="question">
-      <p class="question-label"><span class="question-num">${String(qi+1).padStart(2,'0')}</span>${q.label}</p>
-      ${renderQuestion(q, state.answers[q.id], accentColor)}
-    </div>`;
-  }).join('');
-
-  el.innerHTML = `
-    ${logo()}
-    <div class="progress-wrap">
-      <div class="progress-labels"><span>VOORTGANG</span><span>${pct}%</span></div>
-      <div class="progress-track"><div class="progress-fill" style="width:${pct}%;background:${accentColor}"></div></div>
-    </div>
-    <div class="block-label">BLOK ${state.blockIdx + 1} VAN ${BLOCKS.length}</div>
-    <h2>${block.title}</h2>
-    <div class="block-subtitle">${block.subtitle}</div>
-    ${questionsHtml}
-    <div class="btn-row">
-      ${state.blockIdx > 0 ? `<button class="btn-back" onclick="prevBlock()">TERUG</button>` : ''}
-      <button class="btn-primary" ${!complete ? 'disabled' : ''} onclick="nextBlock()" style="background:${complete ? accentColor : ''}; color:${complete ? 'var(--bg)' : ''}">
-        ${state.blockIdx < BLOCKS.length - 1 ? 'VOLGEND BLOK' : 'SCAN AFRONDEN'}
-      </button>
-    </div>
-  `;
-
-  // attach events
-  el.querySelectorAll('.opt-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const qid = btn.dataset.qid;
-      state.answers[qid] = btn.dataset.value;
-      render();
-    });
-  });
-  el.querySelectorAll('.tag-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const qid = btn.dataset.qid;
-      const val = btn.dataset.value;
-      const cur = state.answers[qid] || [];
-      state.answers[qid] = cur.includes(val) ? cur.filter(x => x !== val) : [...cur, val];
-      render();
-    });
-  });
-  el.querySelectorAll('textarea').forEach(ta => {
-    ta.addEventListener('input', () => {
-      state.answers[ta.dataset.qid] = ta.value;
-      const block = BLOCKS[state.blockIdx];
-      const complete = blockComplete(block, state.answers);
-      const btn = document.querySelector('.btn-row .btn-primary');
-      if (btn) {
-        btn.disabled = !complete;
-        const accentColor = block.accent === 'pink' ? 'var(--pink)' : 'var(--teal)';
-        btn.style.background = complete ? accentColor : 'var(--bg3)';
-        btn.style.color = complete ? 'var(--bg)' : 'var(--text3)';
-        btn.style.cursor = complete ? 'pointer' : 'not-allowed';
-      }
-    });
-  });
-  el.querySelectorAll('input[type=text]').forEach(inp => {
-    inp.addEventListener('input', () => {
-      state.answers[inp.dataset.qid] = inp.value;
-      const block = BLOCKS[state.blockIdx];
-      const complete = blockComplete(block, state.answers);
-      const btn = document.querySelector('.btn-row .btn-primary');
-      if (btn) {
-        btn.disabled = !complete;
-        const accentColor = block.accent === 'pink' ? 'var(--pink)' : 'var(--teal)';
-        btn.style.background = complete ? accentColor : 'var(--bg3)';
-        btn.style.color = complete ? 'var(--bg)' : 'var(--text3)';
-        btn.style.cursor = complete ? 'pointer' : 'not-allowed';
-      }
-    });
-  });
-}
-
-function renderQuestion(q, value, accentColor) {
-  if (q.type === 'select') {
-    return `<div class="options">${q.options.map(opt => `
-      <button class="opt-btn ${value === opt ? 'active' : ''}" data-qid="${q.id}" data-value="${opt}" style="${value === opt ? `background:${accentColor};color:var(--bg);border-color:${accentColor}` : ''}">${opt}</button>
-    `).join('')}</div>`;
-  }
-  if (q.type === 'multicheck') {
-    const sel = value || [];
-    return `<div class="tags">${q.options.map(opt => `
-      <button class="tag-btn ${sel.includes(opt) ? 'active' : ''}" data-qid="${q.id}" data-value="${opt}" style="${sel.includes(opt) ? `background:${accentColor};color:var(--bg);border-color:${accentColor}` : ''}">${opt}</button>
-    `).join('')}</div>`;
-  }
-  if (q.type === 'textarea') {
-    return `<textarea data-qid="${q.id}" placeholder="Schrijf hier je antwoord...">${value || ''}</textarea>`;
-  }
-  if (q.type === 'text') {
-    return `<input type="text" data-qid="${q.id}" placeholder="Schrijf hier je antwoord..." value="${value || ''}">`;
-  }
-  return '';
-}
-
-function prevBlock() {
-  state.blockIdx--;
-  render();
-}
-
-function nextBlock() {
-  if (state.blockIdx < BLOCKS.length - 1) {
-    state.blockIdx++;
+function renderIntro() {
+  app.className = 'wrap fade';
+  app.innerHTML = logo() +
+    '<h1>Marketing Ecosysteem<br><em>Scan.</em></h1>' +
+    '<p class="intro-text">Deze vragenlijst is bewust en diepgaand. Het invullen duurt 45 tot 60 minuten. De kwaliteit van de sessie staat of valt met de eerlijkheid van jouw antwoorden.</p>' +
+    '<p class="intro-text">Er zijn geen goede of foute antwoorden.</p>' +
+    '<div class="notice"><div class="notice-label">Belangrijk</div><p>Deze vragenlijst is bedoeld voor de founder, directeur of marketing lead. Niet te delegeren. De vragen gaan over bedrijfsdoelstellingen en strategische keuzes die alleen jij kunt beantwoorden.</p></div>' +
+    '<div class="meta"><span>+ ' + BLOCKS.length + ' blokken</span><span>+ 45-60 minuten</span></div>' +
+    '<button class="btn-primary" id="startBtn">START DE SCAN</button>';
+  document.getElementById('startBtn').onclick = function() {
+    screen = 'questions';
+    blockIdx = 0;
     render();
-  } else {
-    generateAnalysis();
-  }
+  };
 }
 
+function renderQuestions() {
+  const block = BLOCKS[blockIdx];
+  const pct = Math.round((answeredQ() / totalQ()) * 100);
+  const complete = isComplete(block);
 
+  let html = logo();
+  html += '<div class="progress-wrap"><div class="progress-labels"><span>VOORTGANG</span><span>' + pct + '%</span></div><div class="progress-track"><div class="progress-fill" id="pfill" style="width:' + pct + '%"></div></div></div>';
+  html += '<div class="block-label">BLOK ' + (blockIdx+1) + ' VAN ' + BLOCKS.length + '</div>';
+  html += '<h2>' + block.title + '</h2>';
+  html += '<div class="block-subtitle">' + block.subtitle + '</div>';
 
-function generateAnalysis() {
-  state.screen = 'result';
-  render();
-}`;
+  block.questions.forEach(function(q, qi) {
+    html += '<div class="question">';
+    html += '<p class="question-label"><span class="question-num">0' + (qi+1) + '</span>' + q.label + '</p>';
+    if (q.type === 'select') {
+      html += '<div class="options">';
+      q.options.forEach(function(opt) {
+        const sel = answers[q.id] === opt ? ' sel' : '';
+        html += '<button class="opt-btn' + sel + '" data-qid="' + q.id + '" data-val="' + opt + '">' + opt + '</button>';
+      });
+      html += '</div>';
+    } else if (q.type === 'multi') {
+      const selArr = answers[q.id] || [];
+      html += '<div class="tags">';
+      q.options.forEach(function(opt) {
+        const sel = selArr.indexOf(opt) > -1 ? ' sel' : '';
+        html += '<button class="tag-btn' + sel + '" data-qid="' + q.id + '" data-val="' + opt + '">' + opt + '</button>';
+      });
+      html += '</div>';
+    } else if (q.type === 'textarea') {
+      html += '<textarea data-qid="' + q.id + '" placeholder="Schrijf hier je antwoord...">' + (answers[q.id] || '') + '</textarea>';
+    } else if (q.type === 'text') {
+      html += '<input type="text" data-qid="' + q.id + '" placeholder="Schrijf hier je antwoord..." value="' + (answers[q.id] || '') + '">';
+    }
+    html += '</div>';
+  });
 
-  try {
-    state.screen = 'result';
-  render();
+  html += '<div class="btn-row">';
+  if (blockIdx > 0) html += '<button class="btn-back" id="backBtn">TERUG</button>';
+  html += '<button class="btn-next" id="nextBtn" ' + (complete ? '' : 'disabled') + '>' + (blockIdx < BLOCKS.length-1 ? 'VOLGEND BLOK' : 'SCAN AFRONDEN') + '</button>';
+  html += '</div>';
+
+  app.className = 'wrap fade';
+  app.innerHTML = html;
+
+  // Attach events
+  app.querySelectorAll('.opt-btn').forEach(function(btn) {
+    btn.onclick = function() {
+      answers[btn.dataset.qid] = btn.dataset.val;
+      renderQuestions();
+    };
+  });
+
+  app.querySelectorAll('.tag-btn').forEach(function(btn) {
+    btn.onclick = function() {
+      const qid = btn.dataset.qid;
+      const val = btn.dataset.val;
+      const cur = answers[qid] || [];
+      if (cur.indexOf(val) > -1) {
+        answers[qid] = cur.filter(function(x) { return x !== val; });
+      } else {
+        answers[qid] = cur.concat([val]);
+      }
+      renderQuestions();
+    };
+  });
+
+  app.querySelectorAll('textarea').forEach(function(ta) {
+    ta.oninput = function() {
+      answers[ta.dataset.qid] = ta.value;
+      const complete = isComplete(BLOCKS[blockIdx]);
+      const btn = document.getElementById('nextBtn');
+      if (btn) btn.disabled = !complete;
+    };
+  });
+
+  app.querySelectorAll('input[type=text]').forEach(function(inp) {
+    inp.oninput = function() {
+      answers[inp.dataset.qid] = inp.value;
+      const complete = isComplete(BLOCKS[blockIdx]);
+      const btn = document.getElementById('nextBtn');
+      if (btn) btn.disabled = !complete;
+    };
+  });
+
+  const backBtn = document.getElementById('backBtn');
+  if (backBtn) backBtn.onclick = function() {
+    blockIdx--;
+    renderQuestions();
+  };
+
+  const nextBtn = document.getElementById('nextBtn');
+  if (nextBtn) nextBtn.onclick = function() {
+    if (blockIdx < BLOCKS.length - 1) {
+      blockIdx++;
+      renderQuestions();
+    } else {
+      screen = 'done';
+      render();
+    }
+  };
 }
 
-function renderResult(el) {
-  el.innerHTML = `
-    ${logo()}
-    <div style="margin-bottom:48px;">
-      <div style="font-size:9px;letter-spacing:3px;color:var(--text3);text-transform:uppercase;margin-bottom:16px;">Scan Compleet</div>
-      <h2 style="font-family:Raleway,sans-serif;font-size:28px;font-weight:300;color:var(--text);margin-bottom:16px;">Bedankt voor het invullen.</h2>
-      <p style="color:var(--text2);font-size:13px;line-height:1.8;font-weight:300;max-width:440px;">Download de scan als PDF en stuur hem naar je adviseur. Die neemt contact met je op om een sessie in te plannen.</p>
-    </div>
-    <button class="btn-primary" onclick="downloadPDF()" style="width:100%;padding:15px;font-size:11px;letter-spacing:2px;margin-bottom:10px;">
-      DOWNLOAD SCAN ALS PDF
-    </button>
-    <button class="btn-reset" onclick="resetScan()">OPNIEUW BEGINNEN</button>
-  `;
-}
+function renderDone() {
+  app.className = 'wrap fade';
+  app.innerHTML = logo() +
+    '<div class="done-wrap">' +
+    '<div class="done-title">Bedankt voor het invullen.</div>' +
+    '<p class="done-sub">Download de scan als PDF en stuur hem naar je adviseur. Die neemt contact met je op om een sessie in te plannen.</p>' +
+    '<button class="done-btn" id="pdfBtn">DOWNLOAD SCAN ALS PDF</button>' +
+    '<button class="btn-reset" id="resetBtn">OPNIEUW BEGINNEN</button>' +
+    '</div>';
 
-function downloadPDF() {
-  document.title = "Accelerating Intelligence — Analyse";
-  setTimeout(() => { window.print(); }, 100);
-}
-
-function resetScan() {
-  state = { screen: 'intro', blockIdx: 0, answers: {}, result: null };
-  render();
+  document.getElementById('pdfBtn').onclick = function() {
+    window.print();
+  };
+  document.getElementById('resetBtn').onclick = function() {
+    answers = {};
+    blockIdx = 0;
+    screen = 'intro';
+    render();
+  };
 }
 
 render();
 </script>
-
-<style>
-@media print {
-  body { background: #ffffff !important; color: #1a1a1a !important; font-family: 'Raleway', sans-serif; }
-  .page { padding: 20px !important; }
-  .logo { color: #999 !important; }
-  h1, h2 { color: #1a1a1a !important; }
-  div[style*="background:var(--bg2)"] { background: #f5f5f5 !important; border-left: 3px solid #03bba5 !important; }
-  div[style*="color:var(--teal)"] { color: #03bba5 !important; }
-  div[style*="color:var(--text)"] { color: #1a1a1a !important; }
-  div[style*="color:var(--text2)"] { color: #444 !important; }
-  div[style*="color:var(--text3)"] { color: #888 !important; }
-  div[style*="background:var(--bg)"] { background: #ffffff !important; border: 1px solid #e0e0e0 !important; }
-  .btn-primary, .btn-reset, .btn-back, .notice, .email-section { display: none !important; }
-  @page { margin: 20mm; size: A4; }
-}
-</style>
 </body>
 </html>
